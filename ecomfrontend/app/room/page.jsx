@@ -17,7 +17,7 @@ export default function Page() {
   const room = 'quickstart-room';
   const name = 'quickstart-user';
 
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState('');  
 
   const [roomInstance] = useState(() => new Room({
     // Optimize video quality for each participant's screen
@@ -34,7 +34,9 @@ export default function Page() {
         const data = await resp.json();
         if (!mounted) return;
         if (data.token) {
-          setToken(data.token);
+
+          setToken(data.token); 
+
           await roomInstance.connect(process.env.NEXT_PUBLIC_LIVEKIT_URL, data.token);
         }
       } catch (e) {
@@ -84,17 +86,3 @@ function MyVideoConference() {
     </GridLayout>
   );
 }
-
-// TEST ROOM PAGE
-// 'use client';
-
-// import React from 'react';
-
-// export default function RoomPage() {
-//   return (
-//     <div style={{ padding: 20 }}>
-//       <h1>Room Page läuft ✅</h1>
-//       <p>Wenn du das siehst, ist das Page-Problem gelöst.</p>
-//     </div>
-//   );
-// }
