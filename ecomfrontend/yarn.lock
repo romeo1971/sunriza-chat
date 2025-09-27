@@ -1947,10 +1947,10 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-livekit-client@^2.15.5:
-  version "2.15.5"
-  resolved "https://registry.yarnpkg.com/livekit-client/-/livekit-client-2.15.5.tgz#229f9ac87a286a73c89cc7ee2fbc2dec5f5cd2d6"
-  integrity sha512-zn36akmDlqZxlrTOUgYXtxtj35HQ44aJ+mgKat9BTSPiZru4RjEHOtp8RJE6jGoN2miJlWiOeEKHB2+ae3YrSw==
+livekit-client@^2.15.7:
+  version "2.15.7"
+  resolved "https://registry.yarnpkg.com/livekit-client/-/livekit-client-2.15.7.tgz#98a63cb259eaf6b54a15fe0376d212c6b37fe06b"
+  integrity sha512-19m8Q1cvRl5PslRawDUgWXeP8vL8584tX8kiZEJaPZo83U/L6VPS/O7pP06phfJaBWeeV8sAOVtEPlQiZEHtpg==
   dependencies:
     "@livekit/mutex" "1.1.1"
     "@livekit/protocol" "1.39.3"
