@@ -79,10 +79,14 @@ class FunctionAgent(Agent):
 
             stt=deepgram.STT(),
             llm=openai.LLM(model="gpt-4o-mini"),
-            tts=openai.TTS(voice="alloy", model="tts-1"),
+            tts=openai.TTS(),
             vad=silero.VAD.load(),
             allow_interruptions=True
         )
+
+    async def on_activity_started(self, activity):
+        """Called when the agent starts listening."""
+        await activity.agent.say("Hello! I'm your customer service assistant. How can I help you today?")
 
     async def llm_node(self, chat_ctx, tools, model_settings):
         """Override the llm_node to handle tool calls."""
@@ -111,10 +115,11 @@ async def entrypoint(ctx: JobContext):
     #     model_path="/Users/jimmybradford/Downloads/hacker.imx", # This example uses a demo model installed in the current directory
     # )
 
-    agent = await MCPToolsIntegration.create_agent_with_tools(
-        agent_class=FunctionAgent,
-        mcp_servers=[mcp_server]
-    )
+    # agent = await MCPToolsIntegration.create_agent_with_tools(
+    #     agent_class=FunctionAgent,
+    #     mcp_servers=[mcp_server]
+    # )
+    agent = FunctionAgent()
 
     await ctx.connect()
 
